@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavMain/>
+      <router-view />
+        <Todo/>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavMain from '@/components/NavMain.vue';
+import Todo from './views/Todo';
+// import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+// import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NavMain,
+    Todo
   }
 }
 </script>
