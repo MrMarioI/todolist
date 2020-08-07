@@ -24,7 +24,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/api/todo', require('./routes/api.todo'));
 app.use('/api/todolist', require('./routes/api.todolist'));
 
 // SESSION SETUP
