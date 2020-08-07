@@ -4,7 +4,7 @@
 
       <div class="todo">
       <ul>
-      <li v-for="(pok, i) in pokemons" :key="i">HEY</li>
+      <li v-for="(pok, i) in todos" :key="i">HEY</li>
       </ul>
       <TodoList/>
       </div>

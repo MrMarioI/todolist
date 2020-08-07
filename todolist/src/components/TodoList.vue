@@ -1,8 +1,8 @@
 <template>
 <div class="list">
 <form @submit.prevent="postMessage" class="form">
-    <select v-model="to" id="to" class="input">
-    </select>
+    <!-- <select v-model="to" id="to" class="input"> -->
+    <!-- </select> -->
     <input id="message" class="input" v-model="message"/>
     <button><font-awesome-icon icon="plus" /></button>
   </form>

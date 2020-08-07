@@ -61,6 +61,15 @@ router.patch("/:id", async (req, res, next) => {
 });
 
 
+// /* GET:  todo. */
+// router.get("/todo", async (req, res, next) => {
+//   try {
+//     const todos = await TodoModel.find().sort({ _id: -1 }); 
+//     res.json(todos); 
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
 /* Get: by id*/ 
 router.get("/todo/:id", async (req, res, next) => {
