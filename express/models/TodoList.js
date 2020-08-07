@@ -3,7 +3,11 @@ const Schema = mongoose.Schema;
 
 const todolistSchema = new Schema({
     nom: String,
-    todos: [ObjectId(Todo)]
+    todos:[{
+       type: Shema.Types.ObjectId,
+       ref:"todos"
+    }]
+
 });
 
 const TodoListModel = mongoose.model("TodoList", todolistSchema);

@@ -7,7 +7,7 @@ const TodoListModel = require("../models/Todo");
 router.get("/", async (req, res, next) => {
   try {
     const todolists = await TodoListModel.find()
-    .populate(Todo);
+    .populate("todos");
     res.json(todolists);
   } catch (err) {
     next(err);
