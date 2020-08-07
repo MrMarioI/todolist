@@ -1,14 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app = express();
-
+require("dotenv").config();
+require("./config/mongo"); 
+const session = require("express-session");
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const mongoose = require("mongoose");
+const indexRouter = require('./routes/index');
+const MongoStore = require("connect-mongo")(session);
+const cors = require("cors");
+const app = express();
+// CORS SETUP
+app.use(cors("*"));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -20,7 +24,22 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/todo', require('./routes/todo'));
+app.use('/todolist', require('./routes/todolist'));
+
+// SESSION SETUP
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: { maxAge: 60000 }, // in millisec
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60, // 1 day
+    }),
+    saveUninitialized: true,
+    resave: true,
+  })
+);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
