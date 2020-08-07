@@ -1,24 +1,19 @@
 <template>
    <div>
-      <h1>Your Lists</h1>
+      <h1>Your Todo Lists</h1>
 
       <div class="todo">
       <ul>
-      <li v-for="(pok, i) in todos" :key="i">HEY</li>
+      <li v-for="(list, i) in todos" :key="i"></li>
       </ul>
-      <TodoList/>
       </div>
   </div>
 </template>
 
 <script>
-import TodoList from "./../components/TodoList";
 
 export default {
-name: "Todo",
-components:{
-    TodoList,
-}
+
 }
 </script>
 
