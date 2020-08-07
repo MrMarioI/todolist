@@ -1,7 +1,6 @@
 <template>
    <nav id="nav-main">
 <HelloWorld msg="Guerillos List"/>
-
     <router-link to="/">Home</router-link> |
     <router-link to="/create">Create a list</router-link> |
         <hr>

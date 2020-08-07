@@ -1,10 +1,17 @@
 <template>
-  <div></div>
+  <div>
+            <TodoList/>
+  </div>
 </template>
 
 <script>
-export default {
+import TodoList from "./../components/TodoList";
 
+export default {
+name: "Todo",
+components:{
+    TodoList,
+}
 }
 </script>
 
