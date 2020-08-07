@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const TodoListModel = require("./../models/Todo");
+const TodoListModel = require("../models/Todo");
 
 /* GET:  todo. */
 router.get("/", async (req, res, next) => {
