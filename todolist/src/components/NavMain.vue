@@ -1,10 +1,9 @@
 <template>
    <nav id="nav-main">
-<HelloWorld msg="Guerillas List"/>
+<HelloWorld msg="Guerillos List"/>
 
     <router-link to="/">Home</router-link> |
     <router-link to="/create">Create a list</router-link> |
-        <router-link to="/delete">Erease your lists</router-link> |
         <hr>
   </nav>
 </template>
