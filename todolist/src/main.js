@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faPlus, faMinus)
 
 Vue.config.productionTip = false
-
+Vue.prototype.$ebus = new Vue();
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 
